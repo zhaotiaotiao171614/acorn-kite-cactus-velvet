@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-bg: #f4f2ee;
+  --color-surface: #ffffff;
+  --color-elevated: #eeebe6;
+  --color-fg: #1c1d1b;
+  --color-muted: #5e605c;
+  --color-subtle: #8a8c87;
+  --color-primary: #2a2c2a;
+  --color-primary-foreground: #f4f2ee;
+  --color-border: color-mix(in oklab, var(--color-fg) 10%, transparent);
+  --color-border-strong: color-mix(in oklab, var(--color-fg) 18%, transparent);
+  --color-success: #2f7a52;
+  --color-warning: #9a6f24;
+  --color-danger: #b14a42;
+  --color-running: #3d6580;
+  --color-think: #6b5d4d;
+
+  --font-sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC",
+    system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius: 12px;
+
+  --shadow-border: 0 0 0 1px rgba(28, 29, 27, 0.08), 0 1px 2px rgba(28, 29, 27, 0.05);
+  --shadow-border-hover: 0 0 0 1px rgba(28, 29, 27, 0.12), 0 2px 6px rgba(28, 29, 27, 0.06);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@keyframes live-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes text-shimmer {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: -20% 0;
+  }
+}
+
+@keyframes row-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.live-dot {
+  animation: live-pulse 1.4s ease-in-out infinite;
+}
+
+.thinking-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-muted) 0%,
+    var(--color-fg) 45%,
+    var(--color-muted) 100%
+  );
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: text-shimmer 1.8s linear infinite;
+}
+
+.progress-feed {
+  max-height: min(70vh, 32rem);
+}
+
+.row-enter {
+  animation: row-in 250ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot,
+  .thinking-shimmer,
+  .row-enter {
+    animation: none;
+  }
+
+  .thinking-shimmer {
+    background: none;
+    color: var(--color-muted);
+    -webkit-background-clip: unset;
+    background-clip: unset;
+  }
+}

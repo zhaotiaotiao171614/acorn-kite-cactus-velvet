@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "规划台",
+      "hasCanvas": false,
+      "bodyTextLen": 143,
+      "bodyTextHash": "0e426dd2e2b49e6b2bd92c1d3b0df9d4c415f1bd10addb56848d830013029669",
+      "bodyTextPrefix": "模块二 · 改单分配 规划进度 1x 2x 4x 规划中 00:00 开始规划模块二库存 started 阶段 MKE 改单分配",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "规划台",
+      "hasCanvas": false,
+      "bodyTextLen": 143,
+      "bodyTextHash": "0e426dd2e2b49e6b2bd92c1d3b0df9d4c415f1bd10addb56848d830013029669",
+      "bodyTextPrefix": "模块二 · 改单分配 规划进度 1x 2x 4x 规划中 00:00 开始规划模块二库存 started 阶段 MKE 改单分配",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [
+    "BRAND NOTE: no custom public/og.jpg — the platform will serve the og.grok.me placeholder. Custom cards are the default for games of every kind (DOM board/word games included), whimsical apps, creative tools, and brand-forward pages — only plain utilities (converters, CRUD trackers, admin dashboards) keep the placeholder. If this app is not a plain utility, finish the brand-asset pass per /workspace/.grok/skills/og/SKILL.md."
+  ],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
